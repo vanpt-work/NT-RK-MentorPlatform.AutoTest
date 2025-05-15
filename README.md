@@ -1,1 +1,1 @@
-# -R2E-AUTE-Group-2
+# NT-RK-MentorPlatform.AutoTest
