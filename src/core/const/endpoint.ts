@@ -10,6 +10,6 @@ export const ENDPOINTS = {
     COURSE_CATEGORIES: "/api/course-categories",
     COURSE_CATEGORIES_BY_ID: (id: string) => `/api/course-categories/${id}`,
     ALL_USERS: "/api/users",
-    ACTIVE_USERS_BY_ID: (userId: string) => `/api/users/activate/${userId}`,
-    DEACTIVE_USERS_BY_ID: (userId: string) => `/api/users/deactivate/${userId}`,
+    ACTIVE_USERS_BY_ID: (userId: string) => `/api/users/${userId}/activate`,
+    DEACTIVE_USERS_BY_ID: (userId: string) => `/api/users/${userId}/deactivate`,
 }

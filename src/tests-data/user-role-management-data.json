@@ -1,5 +1,29 @@
 {
-    "activeUser": [{
-        "id": "1"
-    }]
+    "activeUser": [
+        {
+            "id": "7ffcd3ed-f600-4dc0-807a-08dd97521766"
+        }
+    ],
+
+    "activeUser_error": [
+        {
+            "id": "2",
+            "statusCode": 400,
+            "message": "The value '2' is not valid."
+        }
+    ],
+
+    "deactiveUser": [
+        {
+            "id": "7ffcd3ed-f600-4dc0-807a-08dd97521766"
+        }
+    ],
+    
+    "deactiveUser_error": [
+        {
+            "id": "2",
+            "statusCode": 400,
+            "message": "The value '2' is not valid."
+        }
+    ]
 }

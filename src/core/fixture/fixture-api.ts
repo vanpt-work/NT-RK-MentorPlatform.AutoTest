@@ -1,4 +1,3 @@
-import { ENDPOINTS } from "@core/const/endpoint";
 import { APIRequestContext, test as base } from "@playwright/test";
 import LoginLogoutAPI from "src/api/login-logout/login-logout.api";
 require('dotenv').config();

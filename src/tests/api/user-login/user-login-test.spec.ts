@@ -1,5 +1,4 @@
-import { expect, test, request } from "@playwright/test";
-import loginAPI from "src/api/user/user.api";
+import { expect, test } from "@playwright/test";
 import testData from "@tests-data/user-login-data.json";
 import LoginLogoutAPI from "src/api/login-logout/login-logout.api";
 require('dotenv').config();
@@ -12,13 +11,8 @@ test.describe('User Login API', () => {
         loginAPI = new LoginLogoutAPI(request);
     });
 
-    test("Verify user login API sucessfully", async () => {
-        const data = {
-            email: process.env.EMAIL,
-            password: process.env.PASSWORD
-        }
+    test("Happy case: Verify user login API sucessfully", async () => {
         const res = await loginAPI.login(process.env.EMAIL, process.env.PASSWORD);
-        const resBody = await res.json()
         expect(res.status()).toBe(200)
     });
 
@@ -31,3 +25,4 @@ test.describe('User Login API', () => {
         });
     })
 })
+

@@ -22,7 +22,13 @@
             "email": "123456789", 
             "password": "admin123A@",
             "status": 400,
-            "message": "Email must not be empty."
+            "message": "Email must be 8–50 characters and be valid format"
+        },
+        {
+            "email": "admin@mentor.com", 
+            "password": "",
+            "status": 400,
+            "message": "Password must not be empty."
         }
     ]
 }
