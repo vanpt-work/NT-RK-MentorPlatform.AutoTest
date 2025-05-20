@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "lib": ["ESNext", "DOM"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,    
+    "types": ["node", "playwright"],
+    "baseUrl": ".",
+    "paths": {
+      "@tests/*": ["src/tests/*"],
+      "@core/*": ["src/core/*"],
+      "@tests-data/*": ["src/tests-data/*"]
+    }
+  },
+  "include": ["src", "playwright.config.ts"]
+}

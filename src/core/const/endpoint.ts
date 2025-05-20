@@ -1,0 +1,15 @@
+export const ENDPOINTS = {
+    USER_LOGIN: "/api/auth/login",
+    FORGOT_PASSWORD: "/api/auth/forgot-password",
+    VERIFY_FORGOT_PASSWORD: "/api/auth/verify-forgot-password",
+    REFRESH_TOKEN: "/api/auth/refresh-token",
+    VERIFY_EMAIL: "/api/auth/verify-email",
+    RESEND_VERIFY_EMAIL: "/api/auth/resend-verify-email",
+    LOGOUT: "/api/auth/logout",
+    REGISTER: "/api/auth/register",
+    COURSE_CATEGORIES: "/api/course-categories",
+    COURSE_CATEGORIES_BY_ID: (id: string) => `/api/course-categories/${id}`,
+    ALL_USERS: "/api/users",
+    ACTIVE_USERS_BY_ID: (userId: string) => `/api/users/activate/${userId}`,
+    DEACTIVE_USERS_BY_ID: (userId: string) => `/api/users/deactivate/${userId}`,
+}

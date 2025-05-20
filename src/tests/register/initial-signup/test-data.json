@@ -1,0 +1,171 @@
+{
+  "api": {
+    "validMentor": {
+      "Email": "mentor.test@example.com",
+      "Password": "SecureP@ssw0rd123",
+      "FullName": "Jane Mentor",
+      "Role": 1,
+      "Bio": "Experienced software developer with 10+ years in web development.",
+      "IsNotification": true,
+      "IsReceiveMessage": true,
+      "IsPrivateProfile": false,
+      "Expertises": [
+        "365d9e94-51fc-4840-acfe-7f1432007c29",
+        "8a5bc300-21c4-47d0-bb33-27d0a709d417"
+      ],
+      "ProfessionalSkill": "JavaScript, React, Node.js, AWS",
+      "Experience": "10+ years in software development",
+      "CommunicationPreference": 0,  
+      "Goals": "Help students master modern web development",
+      "Availability": [0, 2, 4],
+      "CourseCategoryIds": [
+        "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+      ],
+      "SessionFrequency": 0,
+      "Duration": 60,
+      "LearningStyle": 0,
+      "TeachingStyles": [0, 2]
+    },
+    "validLearner": {
+      "Email": "learner.test@example.com", 
+      "Password": "L3arner@2025",
+      "FullName": "Alex Learner",
+      "Role": 2,
+      "Bio": "Software engineering student looking to improve skills",
+      "IsNotification": true,
+      "IsReceiveMessage": true,
+      "IsPrivateProfile": true,
+      "ProfessionalSkill": "Basic Python, HTML/CSS",
+      "Experience": "1 year internship experience",
+      "CommunicationPreference": 0,
+      "Goals": "Become proficient in full-stack development",
+      "Availability": [1, 3, 4],
+      "CourseCategoryIds": [
+        "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+      ],
+      "SessionFrequency": 0,
+      "Duration": 45,
+      "LearningStyle": 2
+    },
+    "invalidData": {
+      "emptyRequired": {
+        "Email": "",
+        "Password": "",
+        "FullName": "",
+        "Role": null
+      },
+      "invalidEmail": {
+        "Email": "invalid-email",
+        "Password": "ValidPass123!",
+        "FullName": "Test User",
+        "Role": 2
+      },
+      "weakPassword": {
+        "Email": "test@example.com",
+        "Password": "weak",
+        "FullName": "Test User", 
+        "Role": 2
+      },
+      "invalidRole": {
+        "Email": "test@example.com",
+        "Password": "ValidPass123!",
+        "FullName": "Test User",
+        "Role": 999
+      }
+    }
+  },
+  "ui": {
+    "email": {
+      "TS-111": {
+        "description": "Verify default field state and placeholder",
+        "testData": {
+          "expectedPlaceholder": "email@example.com"
+        }
+      },
+      "TS-112": {
+        "description": "Verify empty email validation",
+        "testData": {
+          "email": "",
+          "expectedErrorMessage": "Please enter a valid email address"
+        }
+      },
+      "TS-113": {
+        "description": "Verify invalid email format validation",
+        "testCases": [
+          {
+            "scenario": "Missing @ symbol",
+            "email": "userexample.com",
+            "expectedErrorMessage": "Please enter a valid email address"
+          },
+          {
+            "scenario": "Invalid domain format",
+            "email": "user@invalid",
+            "expectedErrorMessage": "Please enter a valid email address"
+          }
+        ]
+      },
+      "TS-114": {
+        "description": "Verify email length limits",
+        "testData": {
+          "shortEmail": "a@b.co",
+          "longEmail": "thisissuchalongemailthatitshouldbeinvalidbecauseitexceedsthemaximumlength@reallylongdomain.com",
+          "expectedLengthError": "Email must be 8 - 50 characters."
+        }
+      }
+    },
+    "password": {
+      "TS-121": {
+        "description": "Verify empty password validation",
+        "testData": {
+          "email": "valid@example.com",
+          "password": "",
+          "expectedError": "Please enter a password"
+        }
+      },
+      "TS-122": {
+        "description": "Verify password complexity requirements",
+        "testCases": [
+          {
+            "scenario": "Missing uppercase",
+            "password": "password123!",
+            "expectedError": "Password must include uppercase, lowercase, number & special character"
+          },
+          {
+            "scenario": "Missing lowercase",
+            "password": "PASSWORD123!",
+            "expectedError": "Password must include uppercase, lowercase, number & special character"
+          },
+          {
+            "scenario": "Missing number",
+            "password": "Password!!",
+            "expectedError": "Password must include uppercase, lowercase, number & special character"
+          },
+          {
+            "scenario": "Missing special character",
+            "password": "Password123",
+            "expectedError": "Password must include uppercase, lowercase, number & special character"
+          }
+        ]
+      },
+      "TS-123": {
+        "description": "Verify password confirmation match",
+        "testData": {
+          "email": "valid@example.com",
+          "password": "ValidPass1!",
+          "mismatchConfirm": "ValidPass2!",
+          "expectedError": "Passwords do not match"
+        }
+      }
+    },
+    "terms": {
+      "TS-131": {
+        "description": "Verify terms checkbox is required",
+        "testData": {
+          "email": "valid@example.com",
+          "password": "ValidPass1!",
+          "expectedError": "Please agree to the Terms of Service"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+    "userAccount": [
+        {
+            "email": "admin123@mentor.com", 
+            "password": "admin123A@",
+            "status": 400,
+            "message": "Email does not already register."
+        },
+        {
+            "email": "admcom", 
+            "password": "admin123A@",
+            "status": 400,
+            "message": "Email must be 8–50 characters and be valid format"
+        },
+        {
+            "email": "", 
+            "password": "admin123A@",
+            "status": 400,
+            "message": "Email must not be empty."
+        },
+        {
+            "email": "123456789", 
+            "password": "admin123A@",
+            "status": 400,
+            "message": "Email must not be empty."
+        }
+    ]
+}

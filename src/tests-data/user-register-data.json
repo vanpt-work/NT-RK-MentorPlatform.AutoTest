@@ -1,0 +1,163 @@
+{
+    "validData": {        "basicRegistration": {
+            "Email": "test.user@example.com",
+            "Password": "Test@123",
+            "FullName": "Test User",
+            "Role": 1,
+            "CommunicationPreference": 1,
+            "SessionFrequency": 1,
+            "Duration": 1,
+            "LearningStyle": 1,
+            "TeachingStyles": [1],
+            "Expertises": [],
+            "CourseCategoryIds": []
+        },
+        "completeRegistration": {
+            "Email": "complete.user@example.com",
+            "Password": "Complete@123",
+            "AvatarUrl": "test-avatar.jpg",
+            "FullName": "Complete Test User",
+            "Role": 1,
+            "Bio": "I am a software developer with 5 years of experience",
+            "Expertises": ["11111111-1111-1111-1111-111111111111"],
+            "ProfessionalSkill": "JavaScript, Project Management",
+            "Experience": "5 years in Tech",
+            "CommunicationPreference": 1,
+            "Goals": "Learn new technologies",
+            "Availability": [1, 2, 3],
+            "CourseCategoryIds": ["22222222-2222-2222-2222-222222222222"],
+            "SessionFrequency": 1,
+            "Duration": 1,
+            "LearningStyle": 1,
+            "TeachingStyles": [1, 2]
+        }
+    },
+    "invalidData": {
+        "emailValidation": {
+            "emptyEmail": {
+                "Email": "",
+                "expectedError": "Email must not be empty"
+            },
+            "invalidFormat": {
+                "Email": "invalid.email",
+                "expectedError": "Email is invalid"
+            },
+            "tooShort": {
+                "Email": "a@b.com",
+                "expectedError": "Email must be 8-50 characters"
+            },
+            "tooLong": {
+                "Email": "verylongemailaddressthatshouldnotbeallowed123456789@example.com",
+                "expectedError": "Email must be 8-50 characters"
+            }
+        },
+        "passwordValidation": {
+            "emptyPassword": {
+                "Password": "",
+                "expectedError": "Password must not be empty"
+            },
+            "tooShort": {
+                "Password": "Abc@1",
+                "expectedError": "Password must be 8-32 characters"
+            },
+            "noUppercase": {
+                "Password": "test@123",
+                "expectedError": "Password must include uppercase"
+            },
+            "noLowercase": {
+                "Password": "TEST@123",
+                "expectedError": "Password must include lowercase"
+            },
+            "noNumber": {
+                "Password": "Test@abc",
+                "expectedError": "Password must include number"
+            },
+            "noSpecialChar": {
+                "Password": "Test123a",
+                "expectedError": "Password must include special characters"
+            }
+        },
+        "fullNameValidation": {
+            "emptyName": {
+                "FullName": "",
+                "expectedError": "Full name must not be empty"
+            },
+            "tooShort": {
+                "FullName": "Ab",
+                "expectedError": "Full name must be 3 - 200 characters"
+            },
+            "tooLong": {
+                "FullName": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit",
+                "expectedError": "Full name must be 3 - 200 characters"
+            }
+        },
+        "bioValidation": {
+            "tooLong": {
+                "Bio": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum",
+                "expectedError": "Bio must be 2000 characters max"
+            }
+        },
+        "professionalSkillValidation": {
+            "tooLong": {
+                "ProfessionalSkill": "JavaScript, Python, Java, C++, React, Angular, Vue.js, Node.js, Express, Django, Spring Boot, Docker, Kubernetes, AWS, Azure, GCP, MongoDB, PostgreSQL, Redis, ElasticSearch, Machine Learning, Deep Learning, Data Science, DevOps, CI/CD",
+                "expectedError": "Professional skills must be 200 characters max"
+            }
+        },
+        "experienceValidation": {
+            "tooLong": {
+                "Experience": "10 years in Software Development, 5 years in Project Management, 3 years in Team Leadership, 2 years in Product Management, 4 years in System Architecture, 3 years in Cloud Computing, 2 years in Data Science, 1 year in Machine Learning",
+                "expectedError": "Industry experience must be 200 characters max"
+            }
+        },
+        "goalsValidation": {
+            "tooLong": {
+                "Goals": "Master advanced programming concepts, Improve system design skills, Learn cloud architecture, Develop expertise in machine learning, Enhance team leadership abilities, Gain product management experience, Understand DevOps practices, Study data science fundamentals",
+                "expectedError": "Goals must be 200 characters max"
+            }
+        },
+        "requiredFieldsValidation": {
+            "missingRole": {
+                "Role": null,
+                "expectedError": "Role is invalid, please choose a valid value"
+            },
+            "missingCommunicationPreference": {
+                "CommunicationPreference": null,
+                "expectedError": "Preferred communication method is invalid"
+            },
+            "missingSessionFrequency": {
+                "SessionFrequency": null,
+                "expectedError": "Preferred session frequency is invalid"
+            },
+            "missingDuration": {
+                "Duration": null,
+                "expectedError": "Preferred session duration is invalid"
+            },
+            "missingLearningStyle": {
+                "LearningStyle": null,
+                "expectedError": "Preferred learning style is invalid"
+            },
+            "missingTeachingStyles": {
+                "TeachingStyles": [],
+                "expectedError": "Preferred teaching method is invalid"
+            }
+        }
+    },
+    "fileValidation": {
+        "avatarTests": {
+            "validImage": {
+                "fileName": "valid-avatar.jpg",
+                "fileSize": "1MB",
+                "expectedResult": "success"
+            },
+            "oversizedImage": {
+                "fileName": "large-avatar.jpg",
+                "fileSize": "6MB",
+                "expectedError": "Image must less than or equal 5 MB"
+            },
+            "invalidFormat": {
+                "fileName": "invalid-avatar.exe",
+                "expectedError": "Image type is invalid, please upload again"
+            }
+        }
+    }
+}
