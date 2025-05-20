@@ -1,0 +1,40 @@
+{
+  "validUser": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "password": "SecureP@ss123"
+  },
+  "invalidUsers": {
+    "emptyEmail": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "",
+      "password": "SecureP@ss123"
+    },
+    "invalidEmail": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "not-an-email",
+      "password": "SecureP@ss123"
+    },
+    "weakPassword": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "password": "weak"
+    }
+  },
+  "mentorPreferences": {
+    "topics": ["careerDevelopment", "technicalSkills", "leadership"],
+    "sessionFrequency": "weekly",
+    "sessionDuration": "60",
+    "teachingApproaches": ["interactive", "practicalExamples"],
+    "experience": "I have 10 years of experience in software development and have mentored over 20 junior developers throughout my career.",
+    "privacySettings": {
+      "privateProfile": false,
+      "allowMessages": true,
+      "receiveNotifications": true
+    }
+  }
+}

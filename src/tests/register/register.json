@@ -1,0 +1,81 @@
+{
+  "UR-01": {
+    "description": "Verify default value of email address field",
+    "testData": {
+      "expectedPlaceholder": "email@example.com"
+    }
+  },
+  "UR-02": {
+    "description": "Verify that an error message appears when submitting with empty Email Address",
+    "testData": {
+      "email": "",
+      "expectedErrorMessage": "Please enter a valid email address"
+    }
+  },
+  "UR-03": {
+    "description": "Verify that an error message appears when entering invalid email format",
+    "testData": {
+      "invalidEmail": "userexample.com",
+      "expectedErrorMessage": "Please enter a valid email address"
+    }
+  },
+  "UR-04": {
+    "description": "Verify that an error message appears when entering email with invalid domain format",
+    "testData": {
+      "invalidEmail": "user@invalid",
+      "expectedErrorMessage": "Please enter a valid email address"
+    }
+  },
+  "UR-05": {
+    "description": "Verify that the system detects and prevents duplicate email registration",
+    "testData": {
+      "existingEmail": "truong211@example.com",
+      "password": "Abcdef123!",
+      "expectedErrorMessage": "Email is already registered"
+    }
+  },
+  "UR-06": {
+    "description": "Confirm that the email field is case-insensitive",
+    "testData": {
+      "upperCaseEmail": "User@Example.com",
+      "lowerCaseEmail": "user@example.com",
+      "password": "Abcdef123!",
+      "expectedErrorMessage": "Email is already registered"
+    }
+  },
+  "UR-09": {
+    "description": "Confirm that the email field is case-insensitive",
+    "testData": {
+      "upperCaseEmail": "User@Example.com",
+      "lowerCaseEmail": "user@example.com",
+      "password": "Test123!@#",
+      "expectedErrorMessage": "Email is already registered"
+    }
+  },
+  "UR-10": {
+    "description": "Test email submission with leading and trailing spaces",
+    "testData": {
+      "emailWithSpaces": " user@example.com ",
+      "trimmedEmail": "user@example.com",
+      "password": "Test123!@#",
+      "expectedNextStep": "Step 2: Profile"
+    }
+  },
+  "UR-11": {
+    "description": "Verify email address below minimum character limit",
+    "testData": {
+      "shortEmail": "a@b.co",
+      "expectedErrorMessage": "Email must be 8 - 50 characters."
+    }
+  },
+  "UR-35": {
+    "description": "Verify that form submission with all valid inputs proceeds to Profile Setup",
+    "testData": {
+      "email": "newuser@example.com",
+      "password": "Abcdef123!"
+    },
+    "expectedResults": {
+      "progressText": "Step 2: Profile Setup"
+    }
+  }
+}

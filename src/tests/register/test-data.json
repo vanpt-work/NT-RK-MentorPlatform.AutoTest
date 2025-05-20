@@ -1,0 +1,284 @@
+{
+  "registration": {
+    "step1_initial_signup": {
+      "ui": {
+        "email": {
+          "TS-111": {
+            "description": "Verify default field state and placeholder",
+            "testData": {
+              "expectedPlaceholder": "email@example.com"
+            }
+          },
+          "TS-112": {
+            "description": "Verify empty email validation",
+            "testData": {
+              "email": "",
+              "expectedErrorMessage": "Please enter a valid email address"
+            }
+          },
+          "TS-113": {
+            "description": "Verify maximum length validation",
+            "testData": {
+              "email": "",
+              "expectedError": "Email must not exceed 255 characters"
+            }
+          },
+          "TS-114": {
+            "description": "Verify special characters validation",
+            "testData": {
+              "email": "test!#$%^&*()@example.com",
+              "expectedError": "Email contains invalid characters"
+            }
+          }
+        },
+        "password": {
+          "TS-121": {
+            "description": "Verify empty password validation",
+            "testData": {
+              "email": "valid@example.com",
+              "password": "",
+              "expectedError": "Please enter a password"
+            }
+          },
+          "TS-122": {
+            "description": "Verify password complexity requirements",
+            "testCases": [
+              {
+                "scenario": "minimum length",
+                "password": "Ab1!",
+                "expectedError": "Password must be at least 8 characters"
+              },
+              {
+                "scenario": "missing uppercase",
+                "password": "password123!",
+                "expectedError": "Password must include uppercase"
+              },
+              {
+                "scenario": "missing lowercase",
+                "password": "PASSWORD123!",
+                "expectedError": "Password must include lowercase"
+              },
+              {
+                "scenario": "missing number",
+                "password": "Password!!",
+                "expectedError": "Password must include numbers"
+              },
+              {
+                "scenario": "missing special char",
+                "password": "Password123",
+                "expectedError": "Password must include special characters"
+              }
+            ]
+          }
+        },
+        "terms": {
+          "TS-131": {
+            "description": "Verify terms agreement is required",
+            "testData": {
+              "email": "valid@example.com",
+              "password": "ValidPass1!",
+              "expectedError": "Please agree to the Terms of Service"
+            }
+          }
+        },
+        "networkErrors": {
+          "TS-151": {
+            "description": "Handle network timeout",
+            "testData": {
+              "expectedError": "Request timeout. Please try again."
+            }
+          },
+          "TS-152": {
+            "description": "Handle server error",
+            "testData": {
+              "expectedError": "Server error. Please try again later."
+            }
+          }
+        },
+        "edgeCases": {
+          "TS-161": {
+            "description": "Handle concurrent form submissions",
+            "testData": {
+              "expectedSubmitCount": "1"
+            }
+          },
+          "TS-162": {
+            "description": "Handle browser navigation during submission",
+            "testData": {
+              "expectedWarning": "Are you sure you want to leave? Your changes may be lost."
+            }
+          }
+        }
+      }
+    },
+    "step2_profile_setup": {
+      "ui": {
+        "fullName": {
+          "TS-211": {
+            "description": "Verify full name is required",
+            "testData": {
+              "fullName": "",
+              "expectedError": "Full name is required"
+            }
+          }
+        },
+        "role": {
+          "TS-221": {
+            "description": "Verify role selection is required",
+            "testData": {
+              "expectedError": "Please select a role"
+            }
+          },
+          "TS-222": {
+            "description": "Verify available role options",
+            "testData": {
+              "roles": [
+                {"id": 1, "name": "Mentor"},
+                {"id": 2, "name": "Learner"}
+              ]
+            }
+          }
+        },
+        "avatar": {
+          "TS-231": {
+            "description": "Verify avatar upload",
+            "testData": {
+              "validImage": "./testdata/valid-avatar.jpg",
+              "invalidImage": "./testdata/invalid-file.txt",
+              "expectedError": "Please upload a valid image file"
+            }
+          }
+        }
+      },
+      "profileData": {
+        "learner": {
+          "goals": "Improve my programming skills",
+          "experience": "2 years of self-study",
+          "skills": "JavaScript, HTML, CSS",
+          "communication": ["text", "video"],
+          "availability": ["weekends", "evenings"]
+        },
+        "mentor": {
+          "goals": "Help others learn programming",
+          "experience": "10+ years professional experience",
+          "skills": "React, Node.js, TypeScript",
+          "communication": ["text", "audio", "video"],
+          "availability": ["weekdays", "afternoons"]
+        }
+      }
+    },
+    "step3_preferences": {
+      "ui": {
+        "defaults": {
+          "TS-311": {
+            "description": "Verify default privacy settings",
+            "testData": {
+              "isProfilePrivate": false,
+              "allowMessages": true,
+              "emailNotifications": true
+            }
+          }
+        },
+        "profilePrivacy": {
+          "TS-312": {
+            "description": "Configure profile privacy setting",
+            "testData": {
+              "makePrivate": true,
+              "expectedToggleState": true
+            }
+          }
+        },
+        "messagePreferences": {
+          "TS-313": {
+            "description": "Configure message reception setting",
+            "testData": {
+              "allowMessages": false,
+              "expectedToggleState": false
+            }
+          }
+        },
+        "notificationPreferences": {
+          "TS-314": {
+            "description": "Configure email notification setting",
+            "testData": {
+              "enableNotifications": true,
+              "expectedToggleState": true
+            }
+          }
+        }
+      },
+      "preferenceData": {
+        "complete": {
+          "topics": ["JavaScript", "Web Development"],
+          "learningStyles": ["Visual", "Kinesthetic"],
+          "teachingApproaches": ["Hands-on Practice", "Project Based"],
+          "sessionFrequency": "Weekly",
+          "sessionDuration": "1 hour",
+          "privacySettings": {
+            "makeProfilePrivate": false,
+            "allowMessages": true,
+            "receiveEmailNotifications": true
+          }
+        },
+        "options": {
+          "learningStyles": ["Visual", "Auditory", "Reading/Writing", "Kinesthetic"],
+          "teachingApproaches": ["Hands-on Practice", "Project Based", "Lecture Style", "Discussion Base"],
+          "sessionFrequencies": ["Weekly", "Every two weeks", "Monthly", "As Needed"],
+          "sessionDurations": ["30 minutes", "45 minutes", "1 hour", "1.5 hours", "2 hours"]
+        }
+      }
+    },
+    "api": {
+      "validMentor": {
+        "Email": "mentor.test@example.com",
+        "Password": "SecureP@ssw0rd123",
+        "FullName": "Jane Mentor",
+        "Role": 1,
+        "Bio": "Experienced software developer with 10+ years in web development.",
+        "IsPrivateProfile": false,
+        "IsReceiveMessage": true,
+        "IsNotification": true,
+        "Expertises": [
+          "365d9e94-51fc-4840-acfe-7f1432007c29",
+          "8a5bc300-21c4-47d0-bb33-27d0a709d417"
+        ],
+        "CourseCategoryIds": [
+          "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+        ]
+      },
+      "validLearner": {
+        "Email": "learner.test@example.com",
+        "Password": "L3arner@2025",
+        "FullName": "Alex Learner",
+        "Role": 2,
+        "Bio": "Software engineering student looking to improve skills",
+        "IsPrivateProfile": true,
+        "IsReceiveMessage": true,
+        "IsNotification": true,
+        "CourseCategoryIds": [
+          "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+        ]
+      },
+      "invalidData": {
+        "emptyRequired": {
+          "Email": "",
+          "Password": "",
+          "FullName": "",
+          "Role": null
+        },
+        "invalidEmail": {
+          "Email": "invalid-email",
+          "Password": "ValidPass123!",
+          "FullName": "Test User",
+          "Role": 2
+        },
+        "weakPassword": {
+          "Email": "test@example.com",
+          "Password": "weak",
+          "FullName": "Test User",
+          "Role": 2
+        }
+      }
+    }
+  }
+}

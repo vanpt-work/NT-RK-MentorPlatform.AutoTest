@@ -7,3 +7,5 @@ node_modules/
 /playwright/.cache/
 AGENT.md
 .gitignore
+.env
+/.vscode
