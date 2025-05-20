@@ -1,12 +1,10 @@
 import { expect, test, request } from "@playwright/test";
-import loginAPI from "src/api/user/user.api";
-import testData from "@tests-data/user-login-data.json";
+import testLogin from "@tests-data/api/user-login-api-data.json";
 import LoginLogoutAPI from "src/api/login-logout/login-logout.api";
 require('dotenv').config();
 
-
 test.describe('User Login API', () => {
-    let loginAPI: LoginLogoutAPI
+    let loginAPI: LoginLogoutAPI;
 
     test.beforeEach(async ({ request }) => {
         loginAPI = new LoginLogoutAPI(request);
@@ -22,7 +20,7 @@ test.describe('User Login API', () => {
         expect(res.status()).toBe(200)
     });
 
-    testData.userAccount.forEach((account, index) => {
+    testLogin.userAccount.forEach((account, index) => {
         test(`Negative case ${index + 1}: Verify user login API`, async () => {
             const res = await loginAPI.login(account.email, account.password);
             const resBody = await res.json()

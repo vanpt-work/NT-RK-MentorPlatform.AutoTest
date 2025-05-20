@@ -1,0 +1,77 @@
+{
+  "successEdit": {
+    "avatarUrl": "",
+    "fullname": "Learner",
+    "bio": "Passionate about web development and teaching.",
+    "isNotification": true,
+    "isReceiveMessage": true,
+    "isPrivateProfile": false,
+    "expertises": "",
+    "professionalSkill": "Full-stack Web Development",
+    "experience": "5 years of experience in software engineering, mentoring juniors.",
+    "communicationPreference": "Audio Call",
+    "availability": ["Week", "TwoWeek"],
+    "goals": "To help others grow while improving my own leadership skills.",
+    "sessionFrequency": "Weekly",
+    "duration": "1 hour",
+    "learningStyle": "Visual"
+    },
+
+  "unsuccessEdit": [
+    {
+      "avatarUrl": "",
+      "fullname": "",
+      "bio": "Duplicate email test",
+      "isNotification": true,
+      "isReceiveMessage": true,
+      "isPrivateProfile": false,
+      "expertises": "",
+      "professionalSkill": "Skill",
+      "experience": "Experience",
+      "communicationPreference": "Audio Call",
+      "availability": ["Week", "TwoWeek"],
+      "goals": "To help others grow while improving my own leadership skills.",
+      "sessionFrequency": "Weekly",
+      "duration": "1 hour",
+      "learningStyle": "Visual",
+      "message": "Full name must not be empty."
+    },
+    {
+      "avatarUrl": "",
+      "fullname": "AB",
+      "role": "1",
+      "bio": "Full name less than 3 characters",
+      "isNotification": true,
+      "isReceiveMessage": true,
+      "isPrivateProfile": false,
+      "expertises": "",
+      "professionalSkill": "Skill",
+      "experience": "Experience",
+      "communicationPreference": "Audio Call",
+      "availability": ["Week", "TwoWeek"],
+      "goals": "To help others grow while improving my own leadership skills.",
+      "sessionFrequency": "Weekly",
+      "duration": "1 hour",
+      "learningStyle": "Visual",
+      "message": "Full name must be 3 - 200 characters."
+    },
+    {
+      "avatarUrl": "",
+      "fullname": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "bio": "Full name more than 200 characters",
+      "isNotification": false,
+      "isReceiveMessage": false,
+      "isPrivateProfile": true,
+      "expertises": "",
+      "professionalSkill": "Skill",
+      "experience": "Experience",
+      "communicationPreference": "Audio Call",
+      "availability": ["Week", "TwoWeek"],
+      "goals": "To help others grow while improving my own leadership skills.",
+      "sessionFrequency": "Weekly",
+      "duration": "1 hour",
+      "learningStyle": "Visual",
+      "message": "Full name must be 3 - 200 characters."
+    }
+  ]
+}

@@ -12,4 +12,5 @@ export const ENDPOINTS = {
     ALL_USERS: "/api/users",
     ACTIVE_USERS_BY_ID: (userId: string) => `/api/users/activate/${userId}`,
     DEACTIVE_USERS_BY_ID: (userId: string) => `/api/users/deactivate/${userId}`,
+    GET_USER_PROFILE: "/api/auth/me",
 }
