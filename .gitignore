@@ -5,7 +5,5 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-src/core/const/api.json
-src/api/user/
-src/tests/api/user-role-management/
-
+AGENT.md
+.gitignore

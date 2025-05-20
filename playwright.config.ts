@@ -19,7 +19,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'https://2a93-222-252-26-224.ngrok-free.app',
+    baseURL: 'https://bb8e-14-191-164-212.ngrok-free.app',
     trace: 'on-first-retry',
   },
 

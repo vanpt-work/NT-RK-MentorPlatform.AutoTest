@@ -1,0 +1,43 @@
+{
+  "validCategory": {
+    "name": "Test Category",
+    "description": "This is a test category for automated testing",
+    "isActive": true
+  },
+  "updatedCategory": {
+    "name": "Updated Test Category",
+    "description": "This is an updated test category",
+    "isActive": true
+  },
+  "invalidCategory": {
+    "name": "",
+    "description": "Invalid category with empty name",
+    "isActive": true
+  },
+  "testQueries": [
+    {
+      "pageSize": 5,
+      "pageNumber": 1,
+      "search": ""
+    },
+    {
+      "pageSize": 10,
+      "pageNumber": 1,
+      "search": "Software"
+    },
+    {
+      "pageSize": 3,
+      "pageNumber": 2,
+      "search": ""
+    },
+    {
+      "pageSize": -1,
+      "pageNumber": 0,
+      "search": ""
+    }
+  ],
+  "categoryIds": {
+    "valid": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+    "invalid": "00000000-0000-0000-0000-000000000000"
+  }
+}

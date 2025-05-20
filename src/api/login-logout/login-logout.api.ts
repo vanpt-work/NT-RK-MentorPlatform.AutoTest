@@ -9,9 +9,14 @@ export default class LoginLogoutAPI {
     }
 
     async login(email: string, password: string) {
-        const res = await this.request.post(ENDPOINTS.USER_LOGIN, { 
+        const res = await this.request.post(ENDPOINTS.USER_LOGIN, {
             data: { email, password}
          })
+        return res
+    }
+
+    async logout() {
+        const res = await this.request.post(ENDPOINTS.LOGOUT)
         return res
     }
 }

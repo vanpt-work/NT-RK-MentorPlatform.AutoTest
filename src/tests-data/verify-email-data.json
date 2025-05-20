@@ -1,0 +1,54 @@
+{
+    "validData": {
+        "successfulVerification": {
+            "email": "test@example.com",
+            "code": "123456"
+        },
+        "successfulResend": {
+            "email": "unverified@example.com"
+        }
+    },
+    "invalidData": {
+        "nullEmail": {
+            "email": null,
+            "code": "123456"
+        },
+        "invalidFormatEmail": {
+            "email": "invalid-email",
+            "code": "123456"
+        },
+        "nullCode": {
+            "email": "test@example.com",
+            "code": null
+        },
+        "invalidCodeFormat": {
+            "email": "test@example.com",
+            "code": "12345"
+        },
+        "nonExistentEmail": {
+            "email": "nonexistent@example.com",
+            "code": "123456"
+        },
+        "incorrectCode": {
+            "email": "test@example.com",
+            "code": "999999"
+        },
+        "resendInvalidFormats": {
+            "tooShortEmail": {
+                "email": "a@b.com"
+            },
+            "tooLongEmail": {
+                "email": "verylongemailaddressthatshouldnotbeallowed@reallylongdomain.com"
+            },
+            "emptyEmail": {
+                "email": ""
+            },
+            "invalidFormat": {
+                "email": "not-an-email"
+            }
+        },
+        "alreadyVerifiedEmail": {
+            "email": "verified@example.com"
+        }
+    }
+}
