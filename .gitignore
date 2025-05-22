@@ -6,6 +6,6 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 src/core/const/api.json
-src/api/user/
+src/pages/login/login-page-1.ts
 
 

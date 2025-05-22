@@ -17,7 +17,7 @@ export default class CategoryAPI {
     }
     
     async getCourseCategoryById(id: string){
-        const res = await this.request.get(ENDPOINTS.COURSE_CATEGORIES_BY_ID(id))
+        const res = await this.request.get(ENDPOINTS.COURSE_CATEGORIES, {params: id})
         return res
     }
 

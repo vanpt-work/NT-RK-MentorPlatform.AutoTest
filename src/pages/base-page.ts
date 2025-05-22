@@ -5,4 +5,8 @@ export class BasePage {
     constructor(page: Page) {
         this.page = page
     }
+
+    linkTextLocator(name: string){
+        return this.page.getByRole("link", { name: name })
+    }
 }

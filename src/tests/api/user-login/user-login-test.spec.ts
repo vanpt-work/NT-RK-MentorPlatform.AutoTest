@@ -11,7 +11,7 @@ test.describe('User Login API', () => {
         loginAPI = new LoginLogoutAPI(request);
     });
 
-    test("Happy case: Verify user login API sucessfully", async () => {
+    test("Verify user login API sucessfully", async () => {
         const res = await loginAPI.login(process.env.EMAIL, process.env.PASSWORD);
         expect(res.status()).toBe(200)
     });

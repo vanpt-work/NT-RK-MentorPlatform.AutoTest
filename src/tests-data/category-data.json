@@ -1,0 +1,58 @@
+{
+    "getCategory": [
+        {},
+        {
+            "pageSize": 1,
+            "pageNumber": 1,
+            "search": "Development"
+        }
+    ],
+
+    "getCategoryId": [
+        {
+            "id": "00ffeedd-ccbb-aabb-8899-776655443322"
+        },
+        {
+            "id": "00ffeedd-ccbb-aabb-8899-776655443322"
+        }
+    ],
+
+    "postValidCategory": [
+        {
+            "id": "00ffeedd-ccbb-aabb-8899-776655443322",
+            "body": {
+                "name": "user",
+                "description": "string"
+            }
+        },
+        {
+            "id": "00ffeedd-ccbb-aabb-8899-776655443322",
+            "body": {
+                "name": "user",
+                "description": "string"
+            }
+        }
+    ],
+    
+    "postInvalidCategory": [
+        {
+            "id": "00ffeedd-ccbb-aabb-8899-776655443322",
+            "body": {
+                "name": "string",
+                "description": "string"
+            },
+            "statusCode": 400,
+            "message": "Course category name is duplicated"
+        },
+        {
+            "id": "00ffeedd-ccbb-aabb-8899-776655443322",
+            "body": {
+                "name": "string",
+                "description": "string"
+            },
+            "statusCode": 400,
+            "message": "Course category name is duplicated"
+        }
+    ]
+
+}

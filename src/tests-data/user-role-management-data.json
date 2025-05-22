@@ -5,11 +5,11 @@
         }
     ],
 
-    "activeUser_error": [
+    "activeUserError": [
         {
             "id": "2",
             "statusCode": 400,
-            "message": "The value '2' is not valid."
+            "message": "User does not exists."
         }
     ],
 
@@ -19,11 +19,11 @@
         }
     ],
     
-    "deactiveUser_error": [
+    "deactiveUserError": [
         {
             "id": "2",
             "statusCode": 400,
-            "message": "The value '2' is not valid."
+            "message": "User does not exists."
         }
     ]
 }

@@ -11,7 +11,7 @@ test.describe('User Forgot Password', () => {
         loginAPI = new LoginLogoutAPI(request);
     });
 
-    test("Happy case: Verify user forgot password successfully", async () => {
+    test("Verify user forgot password successfully", async () => {
         const res = await loginAPI.forgotPassword(process.env.EMAIL);
         const resBody = await res.json()
         expect(res.status()).toBe(200)
@@ -34,7 +34,7 @@ test.describe('User Verify Forgot Password', () => {
         loginAPI = new LoginLogoutAPI(request);
     });
 
-    test("Happy case: Verify password is reset successfully", async () => {
+    test("Verify password is reset successfully", async () => {
         const data = {
             email: process.env.EMAIL,
             code: ""
