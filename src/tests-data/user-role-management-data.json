@@ -1,0 +1,29 @@
+{
+    "activeUser": [
+        {
+            "id": "7ffcd3ed-f600-4dc0-807a-08dd97521766"
+        }
+    ],
+
+    "activeUserError": [
+        {
+            "id": "2",
+            "statusCode": 400,
+            "message": "User does not exists."
+        }
+    ],
+
+    "deactiveUser": [
+        {
+            "id": "7ffcd3ed-f600-4dc0-807a-08dd97521766"
+        }
+    ],
+    
+    "deactiveUserError": [
+        {
+            "id": "2",
+            "statusCode": 400,
+            "message": "User does not exists."
+        }
+    ]
+}
