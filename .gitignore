@@ -7,5 +7,10 @@ node_modules/
 /playwright/.cache/
 src/core/const/api.json
 src/pages/login/login-page-1.ts
+src/tests/api/course
+src/tests/api/resource
+src/tests-data/resource-data.json
+src/tests-data/course-data.json
+
 
 

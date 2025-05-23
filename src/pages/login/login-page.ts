@@ -48,12 +48,11 @@ export class LoginPage extends BasePage {
 
     async verifyLoginSuccessfully() {
         await this.page.waitForLoadState('networkidle');
-        expect(this.lblHomePageLoc).toBeVisible();
+        await expect(this.lblHomePageLoc).toBeVisible();
     }
 
     async verifyErrorMessage(message: string) {
         await this.page.waitForLoadState('networkidle');
-        expect(this.getErrorMessage(message)).toBeVisible();
+        await expect(this.getErrorMessage(message)).toBeVisible();
     }
-
 }
